@@ -1,16 +1,17 @@
 ﻿FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0-preview-alpine AS build
+ARG TARGETARCH
 WORKDIR /src
 COPY ["DockRestore/DockRestore.csproj", "DockRestore/"]
-RUN dotnet restore "DockRestore/DockRestore.csproj"
+RUN dotnet restore "DockRestore/DockRestore.csproj" -a $TARGETARCH
 COPY . .
 WORKDIR "/src/DockRestore"
 RUN dotnet build "DockRestore.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DockRestore.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish -a $TARGETARCH "DockRestore.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
