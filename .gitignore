@@ -1,0 +1,55 @@
+# .NET Solution
+*.suo
+*.user
+*.sln.docstates
+*.cache
+*.dll
+*.pdb
+*.exe
+*.nupkg
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Rr]elease*/
+[Aa]pp.publish/
+
+# NuGet packages
+packages/
+!packages/repositories.config
+*.nupkg
+
+# .NET Core / .NET 5+ specific
+project.lock.json
+*.nuget.props
+*.nuget.targets
+.nuget/
+
+# User-specific files (Rider, Visual Studio, and Visual Studio Code)
+.vs/
+.vscode/
+.idea/
+*.DotSettings.user
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~.nib
+*~
+*.log
+*.log.bak
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+.DS_Store
+.desktop.ini
+.directory
+.AppleDouble
+.LSOverride
+
+# Custom rules
+DockRestore/appsettings.json
+docker-compose.yml
