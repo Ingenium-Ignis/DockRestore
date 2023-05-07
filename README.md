@@ -25,7 +25,7 @@ DockRestore is a command-line utility for managing and restoring Docker containe
 
 With DockRestore, you can extract a compressed file (the backup) into a target folder (the restore target):
 
-```bash
+```
 docker run -it -v path/to/archive:/archive -v path/to/restore-target:/restore-target ingeniumignis/dockrestore
 ```
 
@@ -121,18 +121,22 @@ volumes:
    ```
    docker-compose exec background /bin/sh
    ```
-
+   
    ```
    ls
    ```
-
+   
    There are no post or pre folders.
-
+   
    ```
    exit
    ```
 
-3. Run dockrestore and select the `test.tar.gz` archive.
+3. Run dockrestore and select the `test.tar.gz` archive:
+   
+   ```
+   docker-compose run dockrestore
+   ```
 
 4. Check the contents of the root folder again. Both directories were created as specified in the labels of `docker-compose.yml`.
 
