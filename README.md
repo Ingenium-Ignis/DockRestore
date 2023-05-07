@@ -6,8 +6,7 @@ DockRestore is a command-line utility for managing and restoring Docker containe
 
 - Navigate file system directories and files
 - Restore Docker container backups from archive files
-- Execute pre and post restoration actions for container management
-- Display restoration progress and handle errors
+- Execute pre and post-restoration commands on other containers in the same compose project
 
 ## Requirements
 
