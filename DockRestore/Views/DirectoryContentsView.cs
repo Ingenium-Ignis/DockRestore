@@ -118,7 +118,7 @@ public class DirectoryContentsView : NotificationHandler<InputNotification>, IDi
     }
 
     /// <inheritdoc/>
-    public void Subscribe(INotificationHandler<ArchiveSelectedNotification> subscriber)
+    public void Subscribe(INotificationHandler<IArchiveSelectedNotification> subscriber)
     {
         _viewModel.Subscribe(subscriber);
     }

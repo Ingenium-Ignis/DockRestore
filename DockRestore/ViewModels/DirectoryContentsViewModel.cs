@@ -49,7 +49,7 @@ public class DirectoryContentsViewModel : IDirectoryContentsViewModel
     public FileSystemInfo SelectedItem { get; set; }
     
     /// <inheritdoc/>
-    public void Subscribe(INotificationHandler<ArchiveSelectedNotification> subscriber)
+    public void Subscribe(INotificationHandler<IArchiveSelectedNotification> subscriber)
     {
         _subscribers.Add(subscriber);
     }

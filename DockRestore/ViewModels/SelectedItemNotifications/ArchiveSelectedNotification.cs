@@ -6,7 +6,7 @@ namespace DockRestore.ViewModels.SelectedItemNotifications;
 /// <summary>
 /// Represents a notification that occurs when an archive is selected.
 /// </summary>
-public class ArchiveSelectedNotification : INotification
+public class ArchiveSelectedNotification : IArchiveSelectedNotification
 {
     /// <summary>
     /// Initializes a new instance of the ArchiveSelectedNotification class with the specified archive.

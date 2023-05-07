@@ -38,7 +38,7 @@ public interface IDirectoryContentsViewModel
     /// Subscribes an <see cref="INotificationHandler{TNotification}"/> for ArchiveSelectedNotification to the list of subscribers.
     /// </summary>
     /// <param name="subscriber">The subscriber implementing the INotificationHandler for ArchiveSelectedNotification.</param>
-    void Subscribe(INotificationHandler<ArchiveSelectedNotification> subscriber);
+    void Subscribe(INotificationHandler<IArchiveSelectedNotification> subscriber);
 
     /// <summary>
     /// Selects the next item in the list.

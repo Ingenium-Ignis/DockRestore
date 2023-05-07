@@ -6,13 +6,13 @@ namespace DockRestore.ConsoleCommands;
 /// <summary>
 /// Handles the ArchiveSelectedNotification event by extending the SafeNotificationHandler class.
 /// </summary>
-public class ArchiveSelectedNotificationHandler : NotificationHandler<ArchiveSelectedNotification>, IArchiveSelectedNotificationHandler
+public class ArchiveSelectedNotificationHandler : NotificationHandler<IArchiveSelectedNotification>, IArchiveSelectedNotificationHandler
 {
     /// <inheritdoc/>
-    public event EventHandler<ArchiveSelectedNotification>? ArchiveSelected;
+    public event EventHandler<IArchiveSelectedNotification>? ArchiveSelected;
     
     /// <inheritdoc/>
-    protected override Task TryHandleNotificationAsync(ArchiveSelectedNotification notification, CancellationToken cancellationToken)
+    protected override Task TryHandleNotificationAsync(IArchiveSelectedNotification notification, CancellationToken cancellationToken)
     {
         OnArchiveSelected(notification);
         return Task.CompletedTask;
@@ -28,7 +28,7 @@ public class ArchiveSelectedNotificationHandler : NotificationHandler<ArchiveSel
     /// Raises the ArchiveSelected event.
     /// </summary>
     /// <param name="e">The ArchiveSelectedNotification containing event data.</param>
-    private void OnArchiveSelected(ArchiveSelectedNotification e)
+    private void OnArchiveSelected(IArchiveSelectedNotification e)
     {
         ArchiveSelected?.Invoke(this, e);
     }
